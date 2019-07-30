@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    /* 清除列表前面默认的样式，比如小圆点和数字 */
+    list-style: none;
+}
+#tabBox{
+
+    box-sizing: border-box;
+    /* 让块级元素水平居中 */
+    margin: 20px auto;
+    width: 500px;
+
+}
+#navBox{
+    display: flex;
+    position: relative;
+    top: 1px;
+
+}
+#navBox li{
+
+    margin-right: 10px;
+    box-sizing: border-box;
+
+    padding: 0 10px;
+    line-height: 35px;
+    border: 1px solid #999999;
+}
+#navBox li.active{
+    border-bottom-color: #ffffff;
+}
+#tabBox>div{
+    display: none;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 150px;
+    border: 1px solid #999999
+}
+#tabBox>div.active{
+    display: block;
+}

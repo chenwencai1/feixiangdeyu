@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击换颜色</title>
+    <style>
+        
+
+        .div {
+            margin: 20px;
+            width: 400px;
+            cursor: pointer;
+            background-color: white
+        }
+    </style>
+</head>
+
+<body  id="b" style="background-color: white">
+
+    
+<button class="div" id="div">点击更换BODY皮肤(白->红->绿->蓝->黑->白)</button>
+    <script>
+        let div = document.getElementById('div');
+        let b=document.getElementById('b');
+        div.onclick = function () {
+            let n = b.style.backgroundColor;
+            if (n === 'white') {
+                b.style.backgroundColor = 'red';
+            }else if (n === 'red') {
+                b.style.backgroundColor = 'green';
+            }else if (n === 'green') {
+                b.style.backgroundColor = 'blue';
+            }else if (n === 'blue') {
+                b.style.backgroundColor = 'black';
+            }else{
+                b.style.backgroundColor = 'white';
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

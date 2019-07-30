@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>加油优惠</title>
+</head>
+<body>
+    汽车编号（92或者97）：<input type="text" id="number" value="0"><br>
+    汽油体积（单位： 升）：<input type="text" id="volume" value="0"><br>
+    <button id="btn">应付价格</button>
+    <script>
+    let num=document.getElementById('number');
+    
+    let val=document.getElementById('volume');
+    let btn=document.getElementById('btn');
+    btn.onclick=function(){
+        let n=Number(num.value);
+        let v=Number(val.value);
+        let result =null;
+
+        if(n===92){
+            if(v<20){
+               result=v*6;
+               console.log(result); 
+
+
+            }else{
+                result=5.9*v;
+               console.log(result); 
+
+            }
+
+        }else if(n===97){
+            if(v<30){
+               result=v*7;
+               console.log(result); 
+
+
+            }else{
+                result=6.95*v;
+               console.log(result); 
+
+            }
+
+        }else{
+            console.log('请输出正确的汽油编号');
+        }
+    }
+    </script>
+</body>
+</html>

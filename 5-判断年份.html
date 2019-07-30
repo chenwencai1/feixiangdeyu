@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断年份</title>
+    <style>
+        #year {
+            margin: 5px 10px;
+
+            border: 1px solid blue
+        }
+
+        #submit {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="year" value="请输入年份">
+    <button id="submit">判断闰平年</button>
+    <script>
+        let year = document.getElementById('year');
+        let submit = document.getElementById('submit');
+        submit.onclick = function () {
+            let y = year.value;
+            y = Number(y);
+
+            if (!isNaN(y)) {
+                if (y % 400 === 0 && y % 100 != 0) {
+                    console.log('此年份是闰年');
+                } else {
+                    console.log('此年份是平年');
+                }
+            } else {
+                console.log('请输出一个数字格式年份');
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none
+        }
+
+        #newsBox {
+
+            box-sizing: border-box;
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            border: 2px solid lightblue;
+
+        }
+
+        #newsBox li {
+
+            line-height: 35px;
+            border-bottom: 1px dashed lightcoral
+        }
+
+        #newsBox li:nth-last-child(1) {
+            border-bottom: none;
+        }
+
+        /* 基于CSS实现隔行变色 */
+        /* #newsBox li:nth-child(even){
+                background-color: aqua
+            }
+            #newsBox li:hover{
+                background-color: blue
+            } */
+    </style>
+</head>
+
+<body>
+
+    <ul id="newsBox">
+        <li>太阳灶工造</li>
+        <li>花儿对我笑</li>
+        <li>小鸟说：早早早</li>
+        <li>你为什么背上小书包</li>
+        <li>我去上学校</li>
+        <li>老师不知道</li>
+    </ul>
+
+    <script>
+        //获取操作的元素
+        let newsBox = document.getElementById('newsBox');
+        let newsList = newsBox.getElementsByTagName("li");
+        //循环LI，奇数行为白色，偶数行为粉色
+        for (let i = 0; i < newsList.length; i++) {
+            newsList[i].style.background = i % 2 === 0 ? 'white' : 'pink';
+            //LI绑定事件
+            newsList[i].onmouseover=function(){
+                this.style.background='blue';
+            }
+            newsList[i].onmouseout=function(){
+                this.style.background =fn();
+            }
+            function fn(){
+              newsList[i].style.background=i % 2 === 0 ? 'white' : 'pink';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

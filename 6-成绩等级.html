@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>成绩等级</title>
+</head>
+
+<body>
+    请输入成绩： <input type="text" id="result" value="0">
+    <button id="grade">成绩等级</button>
+    <script>
+        let rs = document.getElementById('result');
+        let btn = document.getElementById('grade');
+        btn.onclick = function () {
+            let r=rs.value;
+          
+            r=Number(r);
+            if (r >= 90) {
+                console.log('优秀');
+            } else if (r >= 80 && r < 90) {
+                console.log('中等');
+
+            } else if (r >= 70 && r < 80) {
+                console.log('及格');
+            } else {
+                console.log('不及格');
+            }
+
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ES6箭头函数中没有arguments，但可以用...剩余运算符获取到传递的实参信息ARG（并且是数组）
+        let sum = (...arg) => {
+            let total = null;
+
+            arg.forEach(item => {
+                item = Number(item);
+                !isNaN(item) ? total += item : null;
+            });
+            return total;
+
+
+        };
+        /* 任意数求和
+        1.传递实参的个数不定
+        2.传递的值是否为有效数字不定
+        功能：把有效数字相加
+        arguments：函数内置的实参集合
+        1.arguments是一个类数组集合。集合当中存储的所有函数执行时传递的实参信息(是个类数组)
+        2.不论是否设置形参，arguments都存在。
+        3.无论是否传递实参，arguments都存在。
+        arguments.callee:存储的是当前函数本身，严格情况下报错，一般不用这个属性。
+        
+        
+        
+         */
+        /*  function sum() {
+             
+             let total = null;
+             for (let i = 0; i < arguments.length; i++) {
+ 
+                 let itme = Number(arguments[i]);
+                 if (isNaN(itme)) {
+                     continue;
+                 }else{ 
+                     total += itme;
+                     }
+                
+             }
+             return total;
+ 
+         } */
+        let total = sum();
+        console.log(total);
+        total = sum(10);
+        console.log(total);
+        total = sum(10, 20, 30, 40);
+        console.log(total);
+        total = sum(10, 20, '30', 40);
+        console.log(total);
+        total = sum(10, 'AA');
+        console.log(total);
+    </script>
+</body>
+
+</html>

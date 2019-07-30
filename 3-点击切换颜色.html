@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击切换颜色</title>
+    <!-- IMPORT CSS -->
+    <style>
+    *{
+
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+
+<body style="background-color: white">
+    <button id="changeButton">点击颜色切换 </button>
+    <script>
+        let body = document.body;
+        let chengeBtn = document.getElementById('changeButton');
+        /* chengeBtn.onclick = function () {
+
+            //获取当前背景颜色.
+            //元素.style.xxx获取行内样式（颜色在样式中使用16进制地址方式，JS中获取的是RGB的值）
+            let bg = body.style.backgroundColor;
+            switch (bg) {
+
+                case 'white':
+                    body.style.backgroundColor = 'green';
+                    break;
+                case 'green':
+                    body.style.backgroundColor = 'red';
+                    break;
+                case 'red':
+                    body.style.backgroundColor = 'blue';
+                    break;
+                case 'blue':
+                    body.style.backgroundColor = 'black';
+                    break;
+                default:
+                    body.style.backgroundColor = 'white';
+                   
+
+
+
+            }
+              }
+*/
+        //数组方式。ary[数字索引]
+        let i = 0;
+        let ary = ['white', 'pink','blue','#999','rgb(194,150,120)'];
+        //点击按钮实现功能
+        chengeBtn.onclick = function () {
+            //每次索引基于累加后的值，通过数组得到不同的颜色
+            i++;
+            //如果数组索引累加后比数组长度大，是i为0，从头开始
+            i > ary.length - 1 ? i = 0 : null;
+            body.style.backgroundColor = ary[i];
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

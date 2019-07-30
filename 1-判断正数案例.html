@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>案例练习</title>
+    <style>
+        #numInp,
+        #submit {
+
+            box-sizing: border-box;
+            padding: 0 15px;
+            height: 35px;
+            border: 1px solid red;
+        }
+
+        #submit {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="numInp">
+    <button id="submit">点击计算</button>
+    <!-- IMPORT JS -->
+    <script>
+        //想操作谁就先获取谁
+        let numInp = document.getElementById('numInp');
+        let submit = document.getElementById('submit');
+        //事件绑定
+        submit.onclick = function () {
+            //获得文本框中的信息，判断输出
+            let n = numInp.value;
+            //文本框获取的信息是字符串,需要转化为数字类型，然后进行判断
+            n = Number(n);
+            //验证是否是有效数字
+            if (!isNaN(n)) {
+                //isNaN(n)===false
+                //结果为有效数字
+                if(n>0){
+                    console.log('当前输出的信息是正数');
+                }else if(n<0){
+                    console.log('当前输出的信息是负数');
+                }else{
+                    console.log('当前输出的信息是零');
+                }
+
+
+
+            } else {
+                console.log('当前输出的信息是非有效数字');
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
